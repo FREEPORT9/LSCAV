@@ -3,7 +3,7 @@
 #ifndef DEFS_H
 #define DEFS_H
 
-// General Purpose [ MOD00 ]
+// General Purpose [ mod_00 ]
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,18 +13,18 @@ void menu(int argc, char** argv);
 
 void print_usage();
 
-// Command Line Arguments [ MOD01 ]
+// Command Line Arguments [ mod_01 ]
 
 #include <unistd.h>
 
-// System Information [ MOD02 ]
+// System Information [ mod_02 ]
 
 #include <sys/types.h>
 #include <sys/utsname.h>
 
 void system_info();
 
-// Group & User Information [ MOD03, MOD04 ]
+// Group & User Information [ mod_03, mod_04 ]
 
 #include <grp.h>
 #include <pwd.h>
