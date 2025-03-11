@@ -1,25 +1,23 @@
-/******************************************************************************
- * Project Name:      LSCAV - Comprehensive Enumeration Tool for Linux        *
- * File:              lscav.c                                                 *
- *                                                                            *
- * Description:       This program demonstrates a clean, well-organized       *
- *                    structure for a C program, featuring functionality      *
- *                    such as configuration loading, error handling,          *
- *                    logging, and string processing.                         *
- *                                                                            *
- * Author:            Nikola Kipariz Stamov                                   *
- * Date:              March 2025                                              *
- *                                                                            *
- * License:           CC BY-NC 4.0                                            *
- *                                                                            *
- * Notes:             The program provides various utilities for listing      *
- *                    system information, users, and groups on a Linux        *
- *                    machine. It includes proper error handling and logging. *
- *                                                                        	  *
- * Contact:           nikola.stamov@example.com                               *
- ******************************************************************************/
+/*
+ * =======================================================================
+ * Project:    LSCAV
+ * File:       lscav.c
+ * Author:     Nikola Kipariz Stamov
+ * Date:       March 2025
+ * License:    CC BY-NC 4.0
+ *
+ * https://creativecommons.org/licenses/by-nc/4.0/
+ *
+ * Description:
+ *
+ * This powerful tool provides a comprehensive suite of functionalities
+ * designed to facilitate the enumeration and analysis of critical
+ * system information on Linux-based operating systems.
+ *
+ * =======================================================================
+ */
 
-// --- Includes ---
+// INCLUDES
 
 #include <grp.h>
 #include <pwd.h>
@@ -29,14 +27,14 @@
 #include <sys/utsname.h>
 #include <unistd.h>
 
-// --- Prototypes ---
+// PROTOTYPES
 
-void mod_01_menu(int argc, char** argv);
-void mod_02_system_info();
-void mod_03_users();
-void mod_04_groups();
+void MOD01_MENU_FUNC(int argc, char** argv);
+void MOD02_SYSTEM_INFO_FUNCTION();
+void MOD03_USERS_FUNCTION();
+void MOD04_GROUPS_FUNCTION();
 
-// --- Main Program Logic ---
+// MAIN
 
 int main(int argc, char** argv)
 
@@ -46,9 +44,9 @@ int main(int argc, char** argv)
     return 0;
 }
 
-// --- MOD_01_MENU ---
+// FUNCTIONS
 
-void mod_01_menu(int argc, char** argv)
+void MOD01_MENU_FUNC(int argc, char** argv)
 {
     opterr = 0;
 
@@ -80,7 +78,7 @@ void mod_01_menu(int argc, char** argv)
             } else {
                 sflag++;
                 printf("\n");
-                mod_02_system_info();
+                MOD02_SYSTEM_INFO_FUNCTION();
             }
             break;
 
@@ -89,7 +87,7 @@ void mod_01_menu(int argc, char** argv)
             } else {
                 uflag++;
                 printf("\n");
-                mod_03_users(1);
+                MOD03_USERS_FUNCTION(1);
             }
             break;
 
@@ -98,7 +96,7 @@ void mod_01_menu(int argc, char** argv)
             } else {
                 rflag++;
                 printf("\n");
-                mod_03_users(0);
+                MOD03_USERS_FUNCTION(0);
             }
             break;
 
@@ -107,7 +105,7 @@ void mod_01_menu(int argc, char** argv)
             } else {
                 gflag++;
                 printf("\n");
-                mod_04_groups();
+                MOD04_GROUPS_FUNCTION();
             }
             break;
 
@@ -124,9 +122,7 @@ void mod_01_menu(int argc, char** argv)
     puts(str);
 }
 
-// --- MOD_02_SYSTEM_INFORMATION ---
-
-void mod_02_system_info()
+void MOD02_SYSTEM_INFO_FUNCTION()
 {
 
     printf("\n[*] System Information\n\n");
@@ -145,12 +141,10 @@ void mod_02_system_info()
     }
 }
 
-// --- MOD_03_USERS ---
-
-void mod_03_users(int users)
+void MOD03_USERS_FUNCTION(int choice)
 {
 
-    if (users)
+    if (choice)
 
     {
         printf("\n[*] Full User List\n\n");
@@ -225,9 +219,7 @@ void mod_03_users(int users)
     }
 }
 
-// --- MOD_04_GROUPS ---
-
-void mod_04_groups()
+void MOD04_GROUPS_FUNCTION()
 {
 
     printf("\n[*] Full Group List\n\n");
