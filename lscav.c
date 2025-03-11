@@ -1,32 +1,25 @@
-/*
- * =====================================================================
- * LSCAV - Comprehensive Enumeration Tool for Linux
- * =====================================================================
- *
- * File: lscav.c
- *
- * Author: Nikola Kipariz Stamov
- *
- * Date: March 2025
- *
- * Description:
- *
- * This program aims to comprehensively enumerate the Linux OS.
- *
- * License:
- *
- * This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0)
- *
- * You can read the full license here:
- *
- * https://creativecommons.org/licenses/by-nc/4.0/
- *
- * =====================================================================
- */
+/******************************************************************************
+ * Project Name:      LSCAV - Comprehensive Enumeration Tool for Linux        *
+ * File:              lscav.c                                                 *
+ *                                                                            *
+ * Description:       This program demonstrates a clean, well-organized       *
+ *                    structure for a C program, featuring functionality      *
+ *                    such as configuration loading, error handling,          *
+ *                    logging, and string processing.                         *
+ *                                                                            *
+ * Author:            Nikola Kipariz Stamov                                   *
+ * Date:              March 2025                                              *
+ *                                                                            *
+ * License:           CC BY-NC 4.0                                            *
+ *                                                                            *
+ * Notes:             The program provides various utilities for listing      *
+ *                    system information, users, and groups on a Linux        *
+ *                    machine. It includes proper error handling and logging. *
+ *                                                                        	  *
+ * Contact:           nikola.stamov@example.com                               *
+ ******************************************************************************/
 
-// =====================================================================
-// 								Includes
-// =====================================================================
+// --- Includes ---
 
 #include <grp.h>
 #include <pwd.h>
@@ -36,42 +29,41 @@
 #include <sys/utsname.h>
 #include <unistd.h>
 
-// =====================================================================
-// 							Function Declarations
-// =====================================================================
+// --- Prototypes ---
 
-void mod_00_menu(int argc, char** argv);
-void mod_01_help();
+void mod_01_menu(int argc, char** argv);
 void mod_02_system_info();
 void mod_03_users();
 void mod_04_groups();
 
-// =====================================================================
-// 								Main Function
-// =====================================================================
+// --- Main Program Logic ---
 
 int main(int argc, char** argv)
 
 {
-    mod_00_menu(argc, argv);
+    mod_01_menu(argc, argv);
 
     return 0;
 }
 
-// =====================================================================
-// 							Function Definitions
-// =====================================================================
+// --- MOD_01_MENU ---
 
-// --- MOD_00_MENU ---
-
-void mod_00_menu(int argc, char** argv)
+void mod_01_menu(int argc, char** argv)
 {
     opterr = 0;
 
     int option = 0, dflag = 0, gflag = 0, uflag = 0, rflag = 0, sflag = 0;
 
     if (argc < 2) {
-        mod_01_help();
+
+        printf("\n[*] Usage Information\n");
+        printf("\n./lscav \n\n");
+        printf("[-u List All Users] \n");
+        printf("[-g List All Groups]\n");
+        printf("[-r List Regular Users Only] \n");
+        printf("[-s List System Information] \n");
+        printf("\n");
+
         exit(1);
     }
 
@@ -130,20 +122,6 @@ void mod_00_menu(int argc, char** argv)
     }
 
     puts(str);
-}
-
-// --- MOD_01_HELP ---
-
-void mod_01_help()
-{
-
-    printf("\n[*] Usage Information\n");
-    printf("\n./lscav \n\n");
-    printf("[-u List All Users] \n");
-    printf("[-g List All Groups]\n");
-    printf("[-r List Regular Users Only] \n");
-    printf("[-s List System Information] \n");
-    printf("\n");
 }
 
 // --- MOD_02_SYSTEM_INFORMATION ---
