@@ -17,10 +17,11 @@
 
 #### Prerequisites
 
-```bash
-- GCC
-- Make
-```
+Before you begin, ensure that the following tools are installed on your system:
+
+- **GCC** (GNU Compiler Collection) - A C compiler.
+- **Make** - A utility to automatically build executable programs and libraries from source code.
+- **Git** - For cloning the repository (optional if you already have the source).
 
 #### Clone
 
