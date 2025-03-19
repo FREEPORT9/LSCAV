@@ -10,19 +10,26 @@ N/A
 
 ## Installation (Makefile)
 
+#### Prerequisites
+
+```bash
+- GCC
+- Make Utility
+```
+
 #### Clone
 
-   ```bash
-   git clone https://github.com/nxff/LSCAV.git
+```bash
+git clone https://github.com/nxff/LSCAV.git
 
-   cd LSCAV
-   ```
+cd LSCAV
+```
 
 #### Debug Build
-  
-  ```bash
-  make
-  ```
+
+```bash
+make
+```
 
 #### Production Build
 
