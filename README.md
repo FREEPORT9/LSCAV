@@ -14,7 +14,7 @@ N/A
 
 ```bash
 - GCC
-- Make Utility
+- Make
 ```
 
 #### Clone
