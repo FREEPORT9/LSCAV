@@ -18,15 +18,13 @@ N/A
    cd LSCAV
    ```
 
-#### Debug Build
+#### Debug Build (Optimized for Debugging)
   
   ```bash
   make
   ```
 
-#### Production Build
-
-To compile the project with production optimizations, run the following:
+#### Production Build (Optimized for Speed, Security, Compatability)
 
 ```bash
 make prod
