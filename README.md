@@ -10,11 +10,13 @@
 
 ### Compile & Execute:
 
-LSCAV has been designed with simplicity and ease of use in mind, with a straightforward compilation process that enables quick deployment without the need for complex setup or dependencies.
+**LSCAV** is designed for simplicity and ease of use, featuring a straightforward compilation process that allows for quick deployment without the need for complex setup or dependencies.
 
 ```bash
 gcc -Wall -o lscav lscav.c
+```
 
+```bash
 ./lscav
 ```
 
