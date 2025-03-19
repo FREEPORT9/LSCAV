@@ -38,23 +38,24 @@ gcc -Wall -o lscav lscav.c
 
 ## License
 
+## License
+
 **LSCAV** is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** License.
 
-This license allows users to:
-
-- **Share**: Copy, distribute, and transmit the tool, provided the original author is credited.
+### You are free to:
+- **Share**: Copy, distribute, and transmit the tool, as long as you credit the original author.
 - **Adapt**: Remix, transform, and build upon the tool for non-commercial purposes only.
 
-However, the following restrictions apply:
+### The following restrictions apply:
+- **Non-Commercial Use**: Commercial use is prohibited. This includes any use intended for commercial advantage or monetary gain.
+- **Attribution**: Any use or modification of **LSCAV** must provide appropriate credit to the author, include a link to this license, and clearly indicate if changes were made.
 
-- **Non-Commercial Use**: You may not use the material for commercial purposes, which includes any use that is primarily intended for or directed toward commercial advantage or monetary compensation.
-- **Attribution**: Any use or adaptation of **LSCAV** must provide appropriate credit to the original author(s), provide a link to the license, and indicate if any changes were made.
+### For Commercial Use:
+If you wish to use **LSCAV** for commercial purposes, please **contact the author** to discuss licensing arrangements and fees. Commercial use is not covered under the current license, but special permissions can be granted.
 
-If you wish to use **LSCAV** for commercial purposes, please **contact the author** to arrange for proper licensing and payment. Commercial use is not permitted under the current license, but special arrangements can be made for authorized usage.
+For more information, visit the [CC BY-NC 4.0 License](https://creativecommons.org/licenses/by-nc/4.0/).
 
-You can find more details about the Creative Commons Attribution-NonCommercial 4.0 International License on the official website: [CC BY-NC 4.0 License](https://creativecommons.org/licenses/by-nc/4.0/).
-
-This license ensures that the tool remains open for personal, educational, and non-commercial use while protecting it from commercial exploitation without prior permission.
+This license ensures that **LSCAV** remains open for personal, educational, and non-commercial use, while safeguarding it from unauthorized commercial exploitation.
 
 ## Contact
 
