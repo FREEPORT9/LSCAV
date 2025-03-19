@@ -10,13 +10,13 @@ N/A
 
 ## Installation
 
-### Prerequisites
+#### Prerequisites
 
 Make sure you have the following installed:
 - **GCC**: A C compiler (like `gcc`).
 - **Make**: The `make` utility to automate the build process.
 
-### Steps for Installation
+#### Steps for Installation
 
 **Clone the repository**:
 
@@ -26,7 +26,7 @@ Make sure you have the following installed:
    git clone https://github.com/yourusername/lscav.git
    cd lscav
    ```
-   
+
 **Debug Build**:
    
   The project includes a Makefile to automate the compilation process. To compile the project, simply run:
