@@ -19,11 +19,12 @@
 | **Comprehensive Troubleshooting** | Provides detailed system metrics to assist with diagnosing and resolving issues quickly. |
 | **Low Maintenance**            | Built for stability and ease of use, requiring minimal ongoing maintenance. |
 
-## Compilation
+## Quick Compilation
 
 ```bash
-gcc -Wall -o lscav lscav.c
+gcc -o lscav lscav.c
 ```
+## Full Compilation
 
 ```bash
 gcc -std=c99 \
