@@ -1,5 +1,3 @@
-Certainly! Here's a professional and concise **`README.md`** for your **Linux Scavenger** project on GitHub:
-
 ```markdown
 # Linux Scavenger
 
