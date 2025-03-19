@@ -48,7 +48,6 @@ gcc -std=c99 \
 -fno-omit-frame-pointer \
 -fno-builtin \
 -fwrapv \
--fstack-protector \
 -fdiagnostics-show-option \
 -fno-inline \
 -Wl,-z,relro \
