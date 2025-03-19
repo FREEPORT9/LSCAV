@@ -15,7 +15,7 @@ To install **Linux Scavenger**, follow the steps below:
 ### Clone the repository:
 
 ```bash
-git clone https://github.com/nxff/lscav.git
+git clone https://github.com/nxff/LSCAV.git
 cd lscav
 ```
 
