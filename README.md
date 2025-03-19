@@ -62,6 +62,7 @@ gcc -std=c99 \
 -finline-functions \
 -fno-plt \
 -pthread \
+-fsanitize=address,undefined,leak \
 -o lscav \
 lscav.c
 ```
