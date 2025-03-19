@@ -18,7 +18,7 @@ Make sure you have the following installed:
 
 ### Steps for Installation
 
-1. **Clone the repository**:
+**Clone the repository**:
 
    If you haven't already, clone the repository to your local machine:
 
@@ -27,7 +27,7 @@ Make sure you have the following installed:
    cd lscav
    ```
    
-2. **Debug Build**:
+**Debug Build**:
    
   The project includes a Makefile to automate the compilation process. To compile the project, simply run:
 
@@ -35,7 +35,8 @@ Make sure you have the following installed:
   make
   ```
   This will build the project and create the executable lscav_debug in the bin directory.
-3. **Production Build**:
+
+**Production Build**:
 
 To compile the project with production optimizations (e.g., for speed and security), you can run:
 
