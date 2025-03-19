@@ -10,7 +10,7 @@ N/A
 
 ## Installation (Makefile)
 
-**Clone**:
+#### Clone:
 
    ```bash
    git clone https://github.com/nxff/LSCAV.git
@@ -18,24 +18,19 @@ N/A
    cd LSCAV
    ```
 
-**Debug Build**:
+#### Debug Build:
   
-  To compile the project with debugging capabilities, run the following:
-
   ```bash
   make
   ```
-  This will build the project and create the executable lscav_debug in the bin directory.
 
-**Production Build**:
+#### Production Build:
 
 To compile the project with production optimizations, run the following:
 
 ```bash
 make prod
 ```
-
-This will create a lscav_prod binary with production-specific flags.
 
 ## Usage
 
