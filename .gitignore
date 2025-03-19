@@ -1,3 +1,4 @@
 LSCAV.geany
-bin/*
-obj/*
+bin/lscav_prod
+bin/lscav_debug
+obj/*.o
