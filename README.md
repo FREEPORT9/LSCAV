@@ -38,7 +38,23 @@ gcc -Wall -o lscav lscav.c
 
 ## License
 
-**LSCAV** is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/).
+**LSCAV** is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** License.
+
+This license allows users to:
+
+- **Share**: Copy, distribute, and transmit the tool, provided the original author is credited.
+- **Adapt**: Remix, transform, and build upon the tool for non-commercial purposes only.
+
+However, the following restrictions apply:
+
+- **Non-Commercial Use**: You may not use the material for commercial purposes, which includes any use that is primarily intended for or directed toward commercial advantage or monetary compensation.
+- **Attribution**: Any use or adaptation of **LSCAV** must provide appropriate credit to the original author(s), provide a link to the license, and indicate if any changes were made.
+
+If you wish to use **LSCAV** for commercial purposes, please **contact the author** to arrange for proper licensing and payment. Commercial use is not permitted under the current license, but special arrangements can be made for authorized usage.
+
+You can find more details about the Creative Commons Attribution-NonCommercial 4.0 International License on the official website: [CC BY-NC 4.0 License](https://creativecommons.org/licenses/by-nc/4.0/).
+
+This license ensures that the tool remains open for personal, educational, and non-commercial use while protecting it from commercial exploitation without prior permission.
 
 ## Contact
 
