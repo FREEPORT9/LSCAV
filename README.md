@@ -2,7 +2,7 @@
 
 ## Description
 
-**LSCAV** is a self-contained tool with minimal dependencies, designed to collect and analyze critical system information on Linux environments, providing seamless access to essential metrics for system management and troubleshooting with a straightforward compilation process for quick deployment.
+**LSCAV** is a purpose-built, self-contained tool with little to no dependencies, relying solely on system-provided resources to ensure simplicity and efficiency; designed for developers, system administrators, and advanced users, it offers an easy-to-compile solution for collecting and analyzing critical system information on Linux environments, enabling effective system management, performance monitoring, troubleshooting, and optimization with rapid deployment and minimal setup.
 
 ## Features
 - Comprehensive system analysis
