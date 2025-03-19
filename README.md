@@ -10,7 +10,7 @@ N/A
 
 ## Installation
 
-#### Prerequisites
+### Prerequisites
 
 Make sure you have the following installed:
 - **GCC**: A C compiler (like `gcc`).
@@ -18,7 +18,7 @@ Make sure you have the following installed:
 
 #### Steps for Installation
 
-**Clone the repository**:
+**Clone**:
 
    If you haven't already, clone the repository to your local machine:
 
