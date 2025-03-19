@@ -10,7 +10,7 @@ N/A
 
 ## Installation (Makefile)
 
-#### Clone:
+#### Clone
 
    ```bash
    git clone https://github.com/nxff/LSCAV.git
@@ -18,13 +18,13 @@ N/A
    cd LSCAV
    ```
 
-#### Debug Build:
+#### Debug Build
   
   ```bash
   make
   ```
 
-#### Production Build:
+#### Production Build
 
 To compile the project with production optimizations, run the following:
 
