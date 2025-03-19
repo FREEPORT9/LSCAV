@@ -57,6 +57,14 @@ This license ensures that **LSCAV** remains open for personal, educational, and 
 
 ## Contact
 
-Author: Nikola Kipariz Stamov  
+If you have any questions, suggestions, or would like to discuss licensing for commercial use, feel free to reach out.
 
-Email: [nxa.bakeshop479@passinbox.com]  
+**Author:**  
+Nikola Kipariz Stamov
+
+**Email:**  
+[**nxa.bakeshop479@passinbox.com**](mailto:nxa.bakeshop479@passinbox.com)
+
+---
+
+Please don't hesitate to get in touch for any inquiries regarding **LSCAV** or related topics. I am happy to assist with technical questions, provide support, or discuss potential collaboration opportunities.
