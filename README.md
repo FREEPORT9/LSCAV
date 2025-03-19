@@ -18,13 +18,13 @@ N/A
    cd LSCAV
    ```
 
-#### Debug Build (Optimized for Debugging)
+#### Debug Build
   
   ```bash
   make
   ```
 
-#### Production Build (Optimized for Speed, Security, Compatability)
+#### Production Build
 
 ```bash
 make prod
