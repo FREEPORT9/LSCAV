@@ -8,32 +8,13 @@
 - Lightweight and efficient
 - Easy-to-use interface for seamless interaction
 
-## Installation
-
-To install **LSCAV**, follow the steps below:
-
-### Clone the repository:
-
-```bash
-git clone https://github.com/nxff/LSCAV.git
-cd lscav
-```
-
-### Compile:
+### Compile & Execute:
 
 ```bash
 gcc -Wall -o lscav lscav.c
-```
 
-### Run:
-
-```bash
 ./lscav
 ```
-
-## Usage
-
-Once installed, **LSCAV** can be run from the terminal. The tool will automatically gather and display critical system information relevant to your Linux environment.
 
 ## License
 
