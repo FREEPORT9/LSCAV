@@ -12,8 +12,6 @@ N/A
 
 **Clone**:
 
-   If you haven't already, clone the repository to your local machine:
-
    ```bash
    git clone https://github.com/yourusername/lscav.git
    cd lscav
