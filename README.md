@@ -23,6 +23,5 @@ gcc -Wall -o lscav lscav.c
 ## Contact
 
 Author: Nikola Kipariz Stamov  
-Email: [nxa.bakeshop479@passinbox.com]  
 
-Feel free to reach out with any questions or suggestions.
+Email: [nxa.bakeshop479@passinbox.com]  
