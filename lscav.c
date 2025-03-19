@@ -1,18 +1,26 @@
 /*
  * =======================================================================
- * Project:    LSCAV
+ * Project:    Linux Scavenger (LSCAV)
  * File:       lscav.c
  * Author:     Nikola Kipariz Stamov
  * Date:       March 2025
- * License:    CC BY-NC 4.0
- *
- * https://creativecommons.org/licenses/by-nc/4.0/
+ * License:    Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+ *             For more details, please refer to the following URL:
+ *             https://creativecommons.org/licenses/by-nc/4.0/
  *
  * Description:
  *
- * This powerful tool provides a comprehensive suite of functionalities
- * designed to facilitate the enumeration and analysis of critical
- * system information on Linux-based operating systems.
+ * Linux Scavenger is a versatile and powerful tool designed to assist in the
+ * comprehensive collection, analysis, and presentation of critical system
+ * information on Linux-based operating systems.
+ *
+ * The tool aims to provide users with a reliable, user-friendly means of
+ * exploring and understanding key system metrics, promoting informed decision-making
+ * and enhancing system administration processes.
+ *
+ * With a focus on efficiency and precision, Linux Scavenger is an invaluable
+ * resource for developers, system administrators, and users who require
+ * detailed insights into their Linux environment.
  *
  * =======================================================================
  */
@@ -30,16 +38,16 @@
 // PROTOTYPES
 
 void MOD01_MENU_FUNC(int argc, char** argv);
-void MOD02_SYSTEM_INFO_FUNCTION();
-void MOD03_USERS_FUNCTION();
-void MOD04_GROUPS_FUNCTION();
+void MOD02_SYSTEM_INFO_FUNC();
+void MOD03_USERS_FUNC();
+void MOD04_GROUPS_FUNC();
 
 // MAIN
 
 int main(int argc, char** argv)
 
 {
-    mod_01_menu(argc, argv);
+    MOD01_MENU_FUNC(argc, argv);
 
     return 0;
 }
@@ -78,7 +86,7 @@ void MOD01_MENU_FUNC(int argc, char** argv)
             } else {
                 sflag++;
                 printf("\n");
-                MOD02_SYSTEM_INFO_FUNCTION();
+                MOD02_SYSTEM_INFO_FUNC();
             }
             break;
 
@@ -87,7 +95,7 @@ void MOD01_MENU_FUNC(int argc, char** argv)
             } else {
                 uflag++;
                 printf("\n");
-                MOD03_USERS_FUNCTION(1);
+                MOD03_USERS_FUNC(1);
             }
             break;
 
@@ -96,7 +104,7 @@ void MOD01_MENU_FUNC(int argc, char** argv)
             } else {
                 rflag++;
                 printf("\n");
-                MOD03_USERS_FUNCTION(0);
+                MOD03_USERS_FUNC(0);
             }
             break;
 
@@ -105,7 +113,7 @@ void MOD01_MENU_FUNC(int argc, char** argv)
             } else {
                 gflag++;
                 printf("\n");
-                MOD04_GROUPS_FUNCTION();
+                MOD04_GROUPS_FUNC();
             }
             break;
 
@@ -122,7 +130,7 @@ void MOD01_MENU_FUNC(int argc, char** argv)
     puts(str);
 }
 
-void MOD02_SYSTEM_INFO_FUNCTION()
+void MOD02_SYSTEM_INFO_FUNC()
 {
 
     printf("\n[*] System Information\n\n");
@@ -141,7 +149,7 @@ void MOD02_SYSTEM_INFO_FUNCTION()
     }
 }
 
-void MOD03_USERS_FUNCTION(int choice)
+void MOD03_USERS_FUNC(int choice)
 {
 
     if (choice)
@@ -219,7 +227,7 @@ void MOD03_USERS_FUNCTION(int choice)
     }
 }
 
-void MOD04_GROUPS_FUNCTION()
+void MOD04_GROUPS_FUNC()
 {
 
     printf("\n[*] Full Group List\n\n");
