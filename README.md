@@ -10,7 +10,7 @@
 
 ### Compile & Execute:
 
-This tool is designed for simplicity and ease of use, with a straightforward compilation process that enables quick deployment without the need for complex setup or dependencies.
+LSCAV has been designed with simplicity and ease of use in mind, with a straightforward compilation process that enables quick deployment without the need for complex setup or dependencies.
 
 ```bash
 gcc -Wall -o lscav lscav.c
