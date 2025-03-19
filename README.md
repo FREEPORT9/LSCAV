@@ -25,6 +25,46 @@
 gcc -Wall -o lscav lscav.c
 ```
 
+```bash
+gcc -std=c99 \
+-Wall \
+-Wextra \
+-Wpedantic \
+-Werror \
+-O3 \
+-fstack-protector-strong \
+-D_FORTIFY_SOURCE=3 \
+-fPIE \
+-pie \
+-fvisibility=hidden \
+-fno-common \
+-fstack-clash-protection \
+-D_GNU_SOURCE \
+-march=native \
+-mtune=native \
+-flto \
+-fno-strict-aliasing \
+-fno-omit-frame-pointer \
+-fno-builtin \
+-fwrapv \
+-fstack-protector \
+-fdiagnostics-show-option \
+-fno-inline \
+-Wl,-z,relro \
+-Wl,-z,now \
+-Wl,-z,defs \
+-Wl,-z,noexecstack \
+-D_POSIX_C_SOURCE=200809L \
+-D_XOPEN_SOURCE=700 \
+-funswitch-loops \
+-funroll-loops \
+-finline-functions \
+-fno-plt \
+-pthread \
+-o lscav \
+lscav.c
+```
+
 ## Usage
 
 ```bash
