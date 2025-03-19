@@ -8,7 +8,7 @@
 
 N/A
 
-## Installation (Makefile)
+## Installation
 
 #### Prerequisites
 
