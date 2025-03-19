@@ -21,7 +21,9 @@ N/A
 
 **Debug Build**:
    
-  The project includes a Makefile to automate the compilation process. To compile the project, simply run:
+  The project includes a Makefile to automate the compilation process. 
+  
+  To compile the project with debugging capabilities, run the following:
 
   ```bash
   make
@@ -30,19 +32,13 @@ N/A
 
 **Production Build**:
 
-To compile the project with production optimizations (e.g., for speed and security), you can run:
+To compile the project with production optimizations, run the following:
 
 ```bash
 make prod
 ```
 
 This will create a lscav_prod binary with production-specific flags.
-
-## Quick Compilation
-
-```bash
-gcc -o lscav lscav.c
-```
 
 ## Usage
 
