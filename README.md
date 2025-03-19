@@ -109,29 +109,3 @@ Nikola Kipariz Stamov
 ---
 
 Please don't hesitate to get in touch for any inquiries regarding **LSCAV** or related topics. I am happy to assist with technical questions, provide support, or discuss potential collaboration opportunities.
-
-
-/*
- * =======================================================================
- * Project:    Linux Scavenger (LSCAV)
- * File:       lscav.c
- * Author:     Nikola Kipariz Stamov
- * Date:       March 2025
- * License:    Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
- *             For more information, visit: https://creativecommons.org/licenses/by-nc/4.0/
- *
- * Description:
- *
- * Linux Scavenger (LSCAV) is a robust and efficient tool designed for the
- * collection, analysis, and presentation of critical system data on Linux
- * environments. It provides users with an intuitive and reliable way to access
- * and interpret key system metrics, enabling informed decision-making and
- * enhancing system management tasks.
- *
- * LSCAV is an essential resource for developers, system administrators, and
- * advanced users seeking detailed insights into their Linux systems with an
- * emphasis on precision, performance, and ease of use.
- * =======================================================================
- */
-
-
