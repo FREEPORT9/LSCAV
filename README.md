@@ -1,4 +1,3 @@
-```markdown
 # Linux Scavenger
 
 **Linux Scavenger** is a powerful tool for gathering and analyzing critical system information on Linux-based operating systems. Designed for developers, system administrators, and users, it provides easy access to key system metrics for efficient management and troubleshooting.
