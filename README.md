@@ -1,6 +1,6 @@
-# LSCAV
+# LSCAV (Linux Scavanger)
 
-**LSCAV (Linux Scavenger)** is a self-contained tool with minimal dependencies, designed to collect and analyze critical system information on Linux environments, providing seamless access to essential metrics for system management and troubleshooting with a straightforward compilation process for quick deployment.
+**LSCAV** is a self-contained tool with minimal dependencies, designed to collect and analyze critical system information on Linux environments, providing seamless access to essential metrics for system management and troubleshooting with a straightforward compilation process for quick deployment.
 
 ## Features
 - Comprehensive system analysis
