@@ -1,6 +1,6 @@
 # LSCAV (Linux Scavanger)
 
-**LSCAV** is a powerful tool for gathering and analyzing critical system information on Linux-based operating systems. Designed for developers, system administrators, and users, it provides easy access to key system metrics for efficient management and troubleshooting.
+**LSCAV** is a powerful tool for gathering and analyzing critical system information on Linux-based operating systems, providing developers, system administrators, and users with easy access to key metrics for efficient management and troubleshooting.
 
 ## Features
 - Comprehensive system analysis
