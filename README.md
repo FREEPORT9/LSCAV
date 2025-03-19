@@ -13,8 +13,9 @@ N/A
 **Clone**:
 
    ```bash
-   git clone https://github.com/yourusername/lscav.git
-   cd lscav
+   git clone https://github.com/nxff/LSCAV.git
+
+   cd LSCAV
    ```
 
 **Debug Build**:
