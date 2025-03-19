@@ -26,7 +26,8 @@ Make sure you have the following installed:
    git clone https://github.com/yourusername/lscav.git
    cd lscav
    ```
-2. **Build the project using Makefile**:
+   
+2. **Debug Build**:
    
   The project includes a Makefile to automate the compilation process. To compile the project, simply run:
 
@@ -34,14 +35,21 @@ Make sure you have the following installed:
   make
   ```
   This will build the project and create the executable lscav_debug in the bin directory.
-3. 
+3. **Production Build**:
+
+To compile the project with production optimizations (e.g., for speed and security), you can run:
+
+```bash
+make prod
+```
+
+This will create a lscav_prod binary with production-specific flags.
 
 ## Quick Compilation
 
 ```bash
 gcc -o lscav lscav.c
 ```
-
 
 ## Usage
 
