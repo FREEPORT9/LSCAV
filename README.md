@@ -19,13 +19,13 @@ git clone https://github.com/nxff/LSCAV.git
 cd lscav
 ```
 
-### Compile the tool:
+### Compile:
 
 ```bash
-make
+gcc -Wall -o lscav lscav.c
 ```
 
-### Run the tool:
+### Run:
 
 ```bash
 ./lscav
