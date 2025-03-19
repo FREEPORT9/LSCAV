@@ -16,7 +16,8 @@
 | **Lightweight and Fast**       | Optimized for performance with minimal resource usage, ensuring efficient operation. |
 | **Cross-Platform Compatibility** | Works seamlessly across various Linux distributions, ensuring broad usability. |
 | **Designed for Advanced Users**| Tailored for developers, system administrators, and power users, providing them with powerful system insights. |
-| **Comprehensive Troubleshooting** | Pr
+| **Comprehensive Troubleshooting** | Provides detailed system metrics to assist with diagnosing and resolving issues quickly. |
+| **Low Maintenance**            | Built for stability and ease of use, requiring minimal ongoing maintenance. |
 
 ## Compilation
 
