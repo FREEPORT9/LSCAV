@@ -8,7 +8,7 @@
 
 N/A
 
-## Installation
+## Installation (Makefile)
 
 **Clone**:
 
@@ -19,8 +19,6 @@ N/A
    ```
 
 **Debug Build**:
-   
-  The project includes a Makefile to automate the compilation process. 
   
   To compile the project with debugging capabilities, run the following:
 
