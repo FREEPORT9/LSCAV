@@ -15,8 +15,6 @@
 
 ## Installation
 
-#### Prerequisites
-
 Before you begin, ensure that the following tools are installed on your system:
 
 - **GCC** (GNU Compiler Collection) - A C compiler.
