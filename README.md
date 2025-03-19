@@ -8,52 +8,40 @@
 
 N/A
 
+## Installation
+
+### Prerequisites
+
+Make sure you have the following installed:
+- **GCC**: A C compiler (like `gcc`).
+- **Make**: The `make` utility to automate the build process.
+
+### Steps for Installation
+
+1. **Clone the repository**:
+
+   If you haven't already, clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/yourusername/lscav.git
+   cd lscav
+   ```
+2. **Build the project using Makefile**:
+   
+  The project includes a Makefile to automate the compilation process. To compile the project, simply run:
+
+  ```bash
+  make
+  ```
+  This will build the project and create the executable lscav_debug in the bin directory.
+3. 
+
 ## Quick Compilation
 
 ```bash
 gcc -o lscav lscav.c
 ```
-## Full Compilation
 
-```bash
-gcc -std=c99 \
--Wall \
--Wextra \
--Wpedantic \
--Werror \
--O3 \
--fstack-protector-strong \
--D_FORTIFY_SOURCE=3 \
--fPIE \
--pie \
--fvisibility=hidden \
--fno-common \
--fstack-clash-protection \
--D_GNU_SOURCE \
--march=native \
--mtune=native \
--flto \
--fno-strict-aliasing \
--fno-omit-frame-pointer \
--fno-builtin \
--fwrapv \
--fdiagnostics-show-option \
--fno-inline \
--Wl,-z,relro \
--Wl,-z,now \
--Wl,-z,defs \
--Wl,-z,noexecstack \
--D_POSIX_C_SOURCE=200809L \
--D_XOPEN_SOURCE=700 \
--funswitch-loops \
--funroll-loops \
--finline-functions \
--fno-plt \
--pthread \
--fsanitize=address,undefined,leak \
--o lscav \
-lscav.c
-```
 
 ## Usage
 
