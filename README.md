@@ -6,7 +6,12 @@
 
 ## Features
 
-N/A
+- **Minimal Dependencies**: Operates with minimal external dependencies.
+- **Quick Compilation**: Easy to compile with simple commands.
+- **Efficient System Analysis**: Provides critical system data for troubleshooting and performance monitoring.
+- **Cross-Platform Compatibility**: Works seamlessly across Linux distributions.
+- **Security-Centric**: Adheres to best practices for secure operation.
+- **Lightweight and Fast**: Optimized for performance with minimal resource usage.
 
 ## Installation
 
