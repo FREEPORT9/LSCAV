@@ -10,6 +10,8 @@
 
 ### Compile & Execute:
 
+This tool is designed for simplicity and ease of use, with a straightforward compilation process that enables quick deployment without the need for complex setup or dependencies.
+
 ```bash
 gcc -Wall -o lscav lscav.c
 
