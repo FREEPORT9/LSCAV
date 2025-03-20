@@ -25,7 +25,7 @@ Before building the project, ensure that you have the following dependencies ins
 
 ### Build Instructions
 
-1. Clone the repository:
+1. **Clone the repository**:
 
     ```bash
     git clone https://github.com/nxff/LSCAV.git
@@ -37,6 +37,7 @@ Before building the project, ensure that you have the following dependencies ins
    The project can be built with three possible configurations: **Base**, **Debug**, and **Release**.
 
    - **Base Build** (default):
+     
      This build is compiled using the base flags with standard optimizations and no debugging features.
      
      ```bash
@@ -44,6 +45,7 @@ Before building the project, ensure that you have the following dependencies ins
      ```
 
    - **Debug Build**:
+     
      This build includes debugging flags and additional sanitizers for runtime analysis (e.g., memory and thread sanitizers).
      
      ```bash
@@ -51,6 +53,7 @@ Before building the project, ensure that you have the following dependencies ins
      ```
 
    - **Release Build**:
+  
      This build optimizes the code for production use, including higher optimization levels and additional security features like stack protection and PIE (Position Independent Executable).
      
      ```bash
@@ -63,6 +66,7 @@ Before building the project, ensure that you have the following dependencies ins
    - `lscav_release` (from the Release Build)
 
 3. **Clean Build**:
+   
    If you want to remove the compiled object files and binaries, you can run the clean target:
    
    ```bash
@@ -70,9 +74,10 @@ Before building the project, ensure that you have the following dependencies ins
    ```
    This will delete all object files (*.o) and binary executables in the ../obj and ../bin directories.
 
-4. **Notes**
-You can modify the Makefile to customize compiler flags or add any additional dependencies required for your system.
-Ensure your system supports the necessary compiler options (e.g., -fstack-protector, -flto, etc.) for optimal performance and security.
+5. **Notes**:
+
+    You can modify the Makefile to customize compiler flags or add any additional dependencies required for your system.
+    Ensure your system supports the necessary compiler options (e.g., -fstack-protector, -flto, etc.) for optimal performance and security.
 
 ## Usage
 
