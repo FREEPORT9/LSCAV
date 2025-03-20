@@ -29,10 +29,16 @@ git clone https://github.com/nxff/LSCAV.git
 cd LSCAV
 ```
 
-#### Debug Build
+#### Standard
 
 ```bash
 make
+```
+
+#### Debug Build
+
+```bash
+make debug
 ```
 
 #### Production Build
