@@ -13,7 +13,6 @@ OBJECT_FILES = $(SOURCE_FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 # Compiler Flags
 CFLAGS_BASE = -std=c99 -Wall -Wextra -Wpedantic -Werror \
-              -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 \
               -I$(INCLUDE_DIR)
 
 # Debug Build Flags (includes sanitizers and debugging options)
