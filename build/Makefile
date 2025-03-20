@@ -30,24 +30,28 @@ CFLAGS_PROD  = $(CFLAGS_COMMON) -O3 -fstack-protector-strong -D_FORTIFY_SOURCE=3
 LDFLAGS_DEBUG =
 LDFLAGS_PROD  = -flto -Wl,-z,relro -Wl,-z,now -Wl,-z,defs -Wl,-z,noexecstack
 
-# Default target (debug build)
-all: $(BIN_DIR)/lscav_debug
+# Default target: only use CFLAGS_COMMON
+all: $(BIN_DIR)/lscav
 
-# General rule to compile .c files into .o files (with variable flags)
+# General rule to compile .c files into .o files (with common flags)
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS_COMMON) -c $< -o $@
 
-# Debug build rule: link object files into the final binary
-$(BIN_DIR)/lscav_debug: $(OBJ_FILES)
+# Debug build rule: link object files into the final binary with debug flags
+debug: $(OBJ_FILES)
 	$(CC) $(OBJ_FILES) $(CFLAGS_DEBUG) $(LDFLAGS_DEBUG) -o $(BIN_DIR)/lscav_debug
 
-# Production build rule: link object files into the final binary
+# Production build rule: link object files into the final binary with production flags
 prod: $(OBJ_FILES)
 	$(CC) $(OBJ_FILES) $(CFLAGS_PROD) $(LDFLAGS_PROD) -o $(BIN_DIR)/lscav_prod
+
+# General rule for building the default target (lscav) using only common flags
+$(BIN_DIR)/lscav: $(OBJ_FILES)
+	$(CC) $(OBJ_FILES) $(CFLAGS_COMMON) -o $(BIN_DIR)/lscav
 
 # Clean target: remove object files and binaries
 clean:
 	rm -f $(OBJ_DIR)/*.o $(BIN_DIR)/*
 
 # Phony targets (to avoid conflicts with file names)
-.PHONY: all clean prod
+.PHONY: all clean debug prod

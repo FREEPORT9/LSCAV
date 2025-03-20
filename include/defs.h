@@ -1,6 +1,8 @@
 #ifndef DEFINITIONS_H
 #define DEFINITIONS_H
 
+#define _GNU_SOURCE
+
 // STANDARD_FUNCTION
 
 #include <stdio.h>
