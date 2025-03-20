@@ -1,4 +1,4 @@
-# LSCAV
+# LSCAV: Linux Scavanger
 
 ## Description
 
