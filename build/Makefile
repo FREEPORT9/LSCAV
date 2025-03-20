@@ -1,57 +1,56 @@
-# Compiler settings
+# Compiler Settings
 CC = gcc
 
-# Directories
+# Directory Locations
 SRC_DIR      = ../src
 OBJ_DIR      = ../obj
 BIN_DIR      = ../bin
 INCLUDE_DIR  = ../include
 
-# Source and Object files
-SRC_FILES    = $(wildcard $(SRC_DIR)/*.c)
-OBJ_FILES    = $(SRC_FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+# Source and Object File Definitions
+SOURCE_FILES = $(wildcard $(SRC_DIR)/*.c)
+OBJECT_FILES = $(SOURCE_FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-# Common compiler flags for both debug and production
-CFLAGS_COMMON = -std=c99 -Wall -Wextra -Wpedantic -Werror \
-                -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 \
-                -I$(INCLUDE_DIR)
+# Compiler Flags
+CFLAGS_BASE = -std=c99 -Wall -Wextra -Wpedantic -Werror \
+              -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 \
+              -I$(INCLUDE_DIR)
 
-# Debug flags (including UBSan and other debugging tools)
-CFLAGS_DEBUG = $(CFLAGS_COMMON) -g -O0 -fno-inline -fno-omit-frame-pointer \
+# Debug Build Flags (includes sanitizers and debugging options)
+CFLAGS_DEBUG = $(CFLAGS_BASE) -g -O0 -fno-inline -fno-omit-frame-pointer \
                -fwrapv -fdiagnostics-show-option -fsanitize=undefined,leak,address
 
-# Production flags (optimized for speed, security, and no debug info)
-CFLAGS_PROD  = $(CFLAGS_COMMON) -O3 -fstack-protector-strong -D_FORTIFY_SOURCE=3 \
+# Production Build Flags (optimized for performance and security)
+CFLAGS_PROD  = $(CFLAGS_BASE) -O3 -fstack-protector-strong -D_FORTIFY_SOURCE=3 \
                -fPIE -pie -fvisibility=hidden -fno-common -fstack-clash-protection \
                -march=native -mtune=native -flto -fno-strict-aliasing \
                -funroll-loops -finline-functions -fno-plt
 
-# Linker flags
-LDFLAGS_DEBUG =
-LDFLAGS_PROD  = -flto -Wl,-z,relro -Wl,-z,now -Wl,-z,defs -Wl,-z,noexecstack
+# Linker Flags
+LDFLAGS_PROD = -flto -Wl,-z,relro -Wl,-z,now -Wl,-z,defs -Wl,-z,noexecstack
 
-# Default target: only use CFLAGS_COMMON
+# Default Target: Builds the 'lscav' executable
 all: $(BIN_DIR)/lscav
 
-# General rule to compile .c files into .o files (with common flags)
+# Compile .c files into .o object files (using base flags)
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	$(CC) $(CFLAGS_COMMON) -c $< -o $@
+	$(CC) $(CFLAGS_BASE) -c $< -o $@
 
-# Debug build rule: link object files into the final binary with debug flags
-debug: $(OBJ_FILES)
-	$(CC) $(OBJ_FILES) $(CFLAGS_DEBUG) $(LDFLAGS_DEBUG) -o $(BIN_DIR)/lscav_debug
+# Link Object Files into the Debug Executable
+debug: $(OBJECT_FILES)
+	$(CC) $(OBJECT_FILES) $(CFLAGS_DEBUG) -o $(BIN_DIR)/lscav_debug
 
-# Production build rule: link object files into the final binary with production flags
-prod: $(OBJ_FILES)
-	$(CC) $(OBJ_FILES) $(CFLAGS_PROD) $(LDFLAGS_PROD) -o $(BIN_DIR)/lscav_prod
+# Link Object Files into the Production Executable
+release: $(OBJECT_FILES)
+	$(CC) $(OBJECT_FILES) $(CFLAGS_PROD) $(LDFLAGS_PROD) -o $(BIN_DIR)/lscav_release
 
-# General rule for building the default target (lscav) using only common flags
-$(BIN_DIR)/lscav: $(OBJ_FILES)
-	$(CC) $(OBJ_FILES) $(CFLAGS_COMMON) -o $(BIN_DIR)/lscav
+# Default Build: Link the Object Files with Base Flags
+$(BIN_DIR)/lscav: $(OBJECT_FILES)
+	$(CC) $(OBJECT_FILES) $(CFLAGS_BASE) -o $(BIN_DIR)/lscav_standard
 
-# Clean target: remove object files and binaries
+# Clean Build Artifacts
 clean:
 	rm -f $(OBJ_DIR)/*.o $(BIN_DIR)/*
 
-# Phony targets (to avoid conflicts with file names)
-.PHONY: all clean debug prod
+# Phony Targets (Avoid conflicts with filenames)
+.PHONY: all clean debug release
