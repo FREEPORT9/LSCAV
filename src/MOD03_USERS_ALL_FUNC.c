@@ -1,6 +1,6 @@
 #include "../include/defs.h"
 
-void MOD03_USERS_ALL_FUNC()
+void MOD03_USERS_ALL_FUNC(void)
 {
 
     printf("\n[*] Full User List\n\n");

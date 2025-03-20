@@ -2,6 +2,8 @@
 #define DEFINITIONS_H
 
 #define _GNU_SOURCE
+#define _POSIX_C_SOURCE 200809L
+#define _XOPEN_SOURCE 700
 
 // STANDARD_FUNCTION
 
@@ -27,10 +29,10 @@
 #include <grp.h>
 
 void MOD00_MENU_FUNC(int argc, char** argv);
-void MOD01_USAGE_FUNC();
-void MOD02_SYSTEM_INFO_FUNC();
-void MOD03_USERS_ALL_FUNC();
-void MOD03_USERS_REG_FUNC();
-void MOD04_GROUPS_FUNC();
+void MOD01_USAGE_FUNC(void);
+void MOD02_SYSTEM_INFO_FUNC(void);
+void MOD03_USERS_ALL_FUNC(void);
+void MOD03_USERS_REG_FUNC(void);
+void MOD04_GROUPS_FUNC(void);
 
 #endif // DEFINITIONS_H

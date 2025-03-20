@@ -45,7 +45,7 @@ release: $(OBJECT_FILES)
 
 # Default Build: Link the Object Files with Base Flags
 $(BIN_DIR)/lscav: $(OBJECT_FILES)
-	$(CC) $(OBJECT_FILES) $(CFLAGS_BASE) -o $(BIN_DIR)/lscav_standard
+	$(CC) $(OBJECT_FILES) $(CFLAGS_BASE) -o $(BIN_DIR)/lscav_base
 
 # Clean Build Artifacts
 clean:

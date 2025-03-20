@@ -1,6 +1,6 @@
 #include "../include/defs.h"
 
-void MOD01_USAGE_FUNC()
+void MOD01_USAGE_FUNC(void)
 
 {
     printf("\n[*] Usage Information\n");

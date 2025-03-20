@@ -1,6 +1,6 @@
 #include "../include/defs.h"
 
-void MOD04_GROUPS_FUNC()
+void MOD04_GROUPS_FUNC(void)
 {
 
     printf("\n[*] Full Group List\n\n");

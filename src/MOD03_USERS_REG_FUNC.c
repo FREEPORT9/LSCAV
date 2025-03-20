@@ -1,6 +1,6 @@
 #include "../include/defs.h"
 
-void MOD03_USERS_REG_FUNC()
+void MOD03_USERS_REG_FUNC(void)
 {
     printf("\n[*] Regular User List\n\n");
 

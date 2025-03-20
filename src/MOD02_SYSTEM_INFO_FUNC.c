@@ -1,6 +1,6 @@
 #include "../include/defs.h"
 
-void MOD02_SYSTEM_INFO_FUNC()
+void MOD02_SYSTEM_INFO_FUNC(void)
 {
 
     printf("\n[*] System Information\n\n");
