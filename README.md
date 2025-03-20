@@ -77,6 +77,7 @@ Before building the project, ensure that you have the following dependencies ins
 5. **Notes**:
 
     You can modify the Makefile to customize compiler flags or add any additional dependencies required for your system.
+   
     Ensure your system supports the necessary compiler options (e.g., -fstack-protector, -flto, etc.) for optimal performance and security.
 
 ## Usage
