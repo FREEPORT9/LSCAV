@@ -28,8 +28,8 @@ Before building the project, ensure that you have the following dependencies ins
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/yourrepository.git
-    cd yourrepository
+    git clone https://github.com/nxff/LSCAV.git
+    cd LSCAV
     ```
 
 2. **Run the build**:
