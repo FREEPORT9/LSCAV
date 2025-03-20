@@ -15,37 +15,64 @@
 
 ## Installation
 
-Before you begin, ensure that the following tools are installed on your system:
+### Prerequisites
 
-- **GCC** (GNU Compiler Collection) - A C compiler.
-- **Make** - A utility to automatically build executable programs and libraries from source code.
-- **Git** - For cloning the repository (optional if you already have the source).
+Before building the project, ensure that you have the following dependencies installed:
 
-#### Clone
+- **GCC**: The GNU Compiler Collection (GCC) to compile the source code.
+- **Make**: The build automation tool to run the Makefile.
+- **Required Libraries**: Make sure any required libraries for your project are installed in your system. You can modify the Makefile to point to custom include directories and library paths as needed.
 
-```bash
-git clone https://github.com/nxff/LSCAV.git
+### Build Instructions
 
-cd LSCAV
-```
+1. Clone the repository:
 
-#### Standard
+    ```bash
+    git clone https://github.com/yourusername/yourrepository.git
+    cd yourrepository
+    ```
 
-```bash
-make
-```
+2. **Run the build**:
 
-#### Debug Build
+   The project can be built with three possible configurations: **Base**, **Debug**, and **Release**.
 
-```bash
-make debug
-```
+   - **Base Build** (default):
+     This build is compiled using the base flags with standard optimizations and no debugging features.
+     
+     ```bash
+     make
+     ```
 
-#### Production Build
+   - **Debug Build**:
+     This build includes debugging flags and additional sanitizers for runtime analysis (e.g., memory and thread sanitizers).
+     
+     ```bash
+     make debug
+     ```
 
-```bash
-make prod
-```
+   - **Release Build**:
+     This build optimizes the code for production use, including higher optimization levels and additional security features like stack protection and PIE (Position Independent Executable).
+     
+     ```bash
+     make release
+     ```
+
+   The final executables will be placed in the `../bin` directory as follows:
+   - `lscav_base` (from the Base Build)
+   - `lscav_debug` (from the Debug Build)
+   - `lscav_release` (from the Release Build)
+
+3. **Clean Build**:
+   If you want to remove the compiled object files and binaries, you can run the clean target:
+   
+   ```bash
+   make clean
+   ```
+   This will delete all object files (*.o) and binary executables in the ../obj and ../bin directories.
+
+4. **Notes**
+You can modify the Makefile to customize compiler flags or add any additional dependencies required for your system.
+Ensure your system supports the necessary compiler options (e.g., -fstack-protector, -flto, etc.) for optimal performance and security.
 
 ## Usage
 
