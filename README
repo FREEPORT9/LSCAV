@@ -6,13 +6,13 @@
 ================================================================================
 
 
-Authors:
+Authors
 
     - Nikola Kipariz Stamov [nxa.bakeshop479@passinbox.com]
 
 ================================================================================
 
-Description:
+Description
 
 LSCAV is a purpose-built, self-contained tool with little to no dependencies,
 relying solely on system-provided resources to ensure simplicity and
@@ -24,7 +24,7 @@ rapid deployment and minimal setup.
 
 ================================================================================
 
-Features:
+Features
 
     - Lightweight & Efficient
     - Minimal Dependencies
@@ -35,7 +35,7 @@ Features:
 
 ================================================================================
 
-Installation:
+Installation
 
     - Project Prerequisites
 
@@ -43,28 +43,34 @@ Installation:
         - make Utility for Automation & Ease of Use [Optional]
 
     - Direct Compilation [GCC]
-        BASE = -std=c99 -Wall -Wextra -Wpedantic -Werror
 
-        DEBUG = -std=c99 -Wall -Wextra -Wpedantic -Werror \
-                -g -O0 -fno-inline -fno-omit-frame-pointer \
-                -fwrapv -fdiagnostics-show-option \
-                -fsanitize=undefined,leak,address
+        Base:
+            gcc -std=c99 -Wall -Wextra -Wpedantic -Werror \
+            lscav.c -o lscav_base
 
-        RELEASE = -std=c99 -Wall -Wextra -Wpedantic -Werror \
-                -O3 -fstack-protector-strong -D_FORTIFY_SOURCE=3 \
-                -fPIE -pie -fvisibility=hidden -fno-common \
-                -fstack-clash-protection -flto -fno-strict-aliasing \
-                -funroll-loops -finline-functions -fno-plt \
-                -flto -Wl,-z,relro -Wl,-z,now -Wl,-z,defs -Wl,-z,noexecstack
+        Debug:
+            gcc -std=c99 -Wall -Wextra -Wpedantic -Werror -g -O0 \
+            -fno-inline -fno-omit-frame-pointer -fwrapv \
+            -fdiagnostics-show-option -fsanitize=undefined,leak,address \
+            lscav.c -o lscav_debug
+
+        Release:
+            gcc -std=c99 -Wall -Wextra -Wpedantic -Werror -O3 \
+            -fstack-protector-strong -D_FORTIFY_SOURCE=3 -fPIE -pie \
+            -fvisibility=hidden -fno-common -fstack-clash-protection -flto \
+            -fno-strict-aliasing -funroll-loops -finline-functions -fno-plt \
+            -flto -Wl,-z,relro -Wl,-z,now -Wl,-z,defs -Wl,-z,noexecstack \
+            lscav.c -o lscav_release
 
     - Automation with "make" Utility
-        - make [lscav_base / Base Flags]
-        - make debug [lscav_debug / Debug Flags]
-        - make release [lscav_release / Release Flags]
+
+        - make
+        - make debug
+        - make release
 
 ================================================================================
 
-Usage:
+Usage
 
 ./lscav
 
