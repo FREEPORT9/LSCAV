@@ -1,7 +1,7 @@
 # Compiler Settings
 CC = gcc
 
-# Compiler Flags
+# Compiler Standard Build Flags
 CFLAGS_BASE = -std=c99 -Wall -Wextra -Wpedantic -Werror
 
 # Debug Build Flags (includes sanitizers and debugging options)
