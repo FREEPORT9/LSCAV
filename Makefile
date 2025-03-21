@@ -2,10 +2,10 @@
 CC = gcc
 
 # Directory Locations
-SRC_DIR      = ../src
-OBJ_DIR      = ../obj
-BIN_DIR      = ../bin
-INCLUDE_DIR  = ../include
+SRC_DIR      = ./src
+OBJ_DIR      = ./obj
+BIN_DIR      = ./bin
+INCLUDE_DIR  = ./include
 
 # Source and Object File Definitions
 SOURCE_FILES = $(wildcard $(SRC_DIR)/*.c)
