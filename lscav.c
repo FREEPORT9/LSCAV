@@ -1,6 +1,6 @@
 // Macros
 
-#define _GNU_SOURCE // Enables GNU extensions in glibc [WILL BE DELETED WHEN POSIX]
+#define _GNU_SOURCE // Enables GNU extensions in glibc [DELETE WHEN POSIX]
 #define _POSIX_C_SOURCE 200809L // Enables POSIX 2008 Standard Features
 #define _XOPEN_SOURCE 700 // Enables X/Open Version 7 Standard Features
 
