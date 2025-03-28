@@ -11,17 +11,16 @@
 #include <pwd.h> // User Account Information
 #include <stdio.h> // Standard I/O Functions
 #include <stdlib.h> // General Utility Functions
+#include <string.h>
 #include <sys/types.h> // Defines System Data Types
 #include <sys/utsname.h> // System Information
 #include <unistd.h> // POSIX System Calls
 
 // Function Prototypes
 
-void M000_USAGE(void); // Displays Usage Instructions
 void M001_MENU(int argc, char** argv); // Displays Menu & Handles Arguments
 void M002_SYSTEM(void); // Collects System Information
-void M003_ALL_USERS(void); // Collects All Users Information
-void M003_REG_USERS(void); // Collects Regular User Information
+void M003_USERS(int REG_USR); // Collects Users Information
 void M004_GROUPS(void); // Collects Group Information
 
 int main(int argc, char** argv)
@@ -31,85 +30,74 @@ int main(int argc, char** argv)
     return 0;
 }
 
-void M000_USAGE(void)
-{
-    printf("\n[*] Usage Information\n");
-    printf("\n./lscav \n\n");
-    printf("[-u List All Users] \n");
-    printf("[-g List All Groups]\n");
-    printf("[-r List Regular Users Only] \n");
-    printf("[-s List System Information] \n");
-    printf("\n");
-}
-
 void M001_MENU(int argc, char** argv)
 {
-    opterr = 0;
-
-    int option = 0, dflag = 0, gflag = 0, uflag = 0, rflag = 0, sflag = 0;
 
     if (argc < 2) {
 
-        M000_USAGE();
+        printf("\n[*] Usage Information\n");
+        printf("\n./lscav \n\n");
+        printf("[-u List All Users] \n");
+        printf("[-g List All Groups]\n");
+        printf("[-r List Regular Users Only] \n");
+        printf("[-s List System Information] \n");
+        printf("\n");
 
+        exit(1);
+    } // Print Usage Message if no Arguments
+
+    for (int i = 1; i < argc; i++) {
+        if (argv[i][0] == '-' && strspn(&argv[i][1], "surg") == strlen(&argv[i][1])) {
+            continue;
+        }
+
+        printf("\n[*] Warning Information\n\nWARNING: Bad input detected! %s\n\n", argv[i]);
         exit(1);
     }
 
-    char str[80];
+    opterr = 0; // Disable Error Message for GETOPT
 
-    while ((option = getopt(argc, argv, "-:surg")) != -1)
+    int flags[] = { 0, 0, 0, 0, 0, 0 }; // option, sflag, uflag, rflag, gflag, dflag
 
-    {
-        switch (option)
+    while ((flags[0] = getopt(argc, argv, "-:surg")) != -1) {
 
         {
-        case 's':
-            if (sflag) {
-            } else {
-                sflag++;
-                printf("\n");
-                M002_SYSTEM();
-            }
-            break;
+            switch (flags[0])
 
-        case 'u':
-            if (uflag) {
-            } else {
-                uflag++;
-                printf("\n");
-                M003_ALL_USERS();
-            }
-            break;
+            {
+            case 's':
+                if (!flags[1]++) {
+                    printf("\n");
+                    M002_SYSTEM();
+                }
+                break;
 
-        case 'r':
-            if (rflag) {
-            } else {
-                rflag++;
-                printf("\n");
-                M003_REG_USERS();
-            }
-            break;
+            case 'u':
+                if (!flags[2]++) {
+                    printf("\n");
+                    M003_USERS(0);
+                }
+                break;
 
-        case 'g':
-            if (gflag) {
-            } else {
-                gflag++;
-                printf("\n");
-                M004_GROUPS();
-            }
-            break;
+            case 'r':
+                if (!flags[3]++) {
+                    printf("\n");
+                    M003_USERS(1);
+                }
+                break;
 
-        default:
-            if (dflag) {
-            } else {
-                dflag++;
-                snprintf(str, 80, "\n[*] Warning Information\n\nWARNING: Bad input detected! -%c\n",
-                    optopt);
+            case 'g':
+                if (!flags[4]++) {
+                    printf("\n");
+                    M004_GROUPS();
+                }
+                break;
+
+            default:
+                break;
             }
         }
     }
-
-    puts(str);
 }
 
 void M002_SYSTEM(void)
@@ -130,30 +118,38 @@ void M002_SYSTEM(void)
     }
 }
 
-void M003_ALL_USERS(void)
+void M003_USERS(int REG_USR)
 {
-
     printf("\n[*] Full User List\n\n");
 
     struct passwd* p_loop;
 
-    while ((p_loop = getpwent()) != NULL) {
+    uid_t uid = (REG_USR) ? 1000 : 0; // 1000 for Regular Users Only
+
+    // Loop through users (either all or regular ones)
+    while ((p_loop = (REG_USR ? getpwuid(uid) : getpwent())) != NULL) {
+
+        // Print user details
         printf("%-20s: %s\n", "[-] Username", p_loop->pw_name);
         printf("%-20s: %d\n", "[-] UID", (int)p_loop->pw_uid);
         printf("%-20s: %d\n", "[-] GID", (int)p_loop->pw_gid);
 
         int ngroups = 0;
 
+        // Get List of Groups the User Belongs To
         getgrouplist(p_loop->pw_name, p_loop->pw_gid, NULL, &ngroups);
-        __gid_t groups[ngroups];
 
+        gid_t groups[ngroups];
+
+        // Fill the Array with those Groups
         getgrouplist(p_loop->pw_name, p_loop->pw_gid, groups, &ngroups);
 
         printf("%-20s: ", "[-] Groups");
 
+        // Print Group Information
+
         for (int i = 0; i < ngroups; i++) {
             struct group* g_single = getgrgid(groups[i]);
-
             printf("%s ", g_single->gr_name);
         }
 
@@ -164,47 +160,15 @@ void M003_ALL_USERS(void)
         printf("%-20s: %s\n", "[-] Information", p_loop->pw_gecos);
 
         printf("\n\n");
-    }
 
-    endpwent();
-}
-
-void M003_REG_USERS(void)
-{
-    printf("\n[*] Regular User List\n\n");
-
-    struct passwd* p_single;
-
-    uid_t uid = 1000;
-
-    while ((p_single = getpwuid(uid)) != NULL) {
-        printf("%-20s: %s\n", "[-] Username", p_single->pw_name);
-        printf("%-20s: %d\n", "[-] UID", (int)p_single->pw_uid);
-        printf("%-20s: %d\n", "[-] GID", (int)p_single->pw_gid);
-
-        int ngroups = 0;
-
-        getgrouplist(p_single->pw_name, p_single->pw_gid, NULL, &ngroups);
-        __gid_t groups[ngroups];
-
-        getgrouplist(p_single->pw_name, p_single->pw_gid, groups, &ngroups);
-
-        printf("%-20s: ", "[-] Groups");
-
-        for (int i = 0; i < ngroups; i++) {
-            struct group* g_single = getgrgid(groups[i]);
-
-            printf("%s ", g_single->gr_name);
+        // Move to the next user (increment UID if we're showing regular users)
+        if (REG_USR) {
+            uid++;
         }
-
-        printf("\n");
-
-        printf("%-20s: %s\n", "[-] Default Shell", p_single->pw_shell);
-        printf("%-20s: %s\n", "[-] Home Directory", p_single->pw_dir);
-        printf("%-20s: %s\n", "[-] Information", p_single->pw_gecos);
-        printf("\n");
-        uid++;
     }
+
+    // End the user enumeration when done
+    endpwent();
 }
 
 void M004_GROUPS(void)
